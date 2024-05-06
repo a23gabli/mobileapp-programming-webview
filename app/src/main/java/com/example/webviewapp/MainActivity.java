@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
-            Log.d("==>","Will display external web page");
+            myWebView.loadUrl("https://www.google.com");
             return true;
         }
 
         if (id == R.id.action_internal_web) {
-            Log.d("==>","Will display internal web page");
+            myWebView.loadUrl("file:///android_asset/hello.html");
             return true;
         }
 
