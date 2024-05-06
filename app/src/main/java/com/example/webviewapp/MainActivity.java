@@ -4,11 +4,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
+
+    private WebView myWebView;
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
@@ -24,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        myWebView = findViewById(R.id.my_webview);
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.loadUrl("file:///android_asset/hello.html");
+
+        WebViewClient webViewClient = new WebViewClient(){
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+        };
 
         /*
         * Rename your App. Tip: Values->Strings
