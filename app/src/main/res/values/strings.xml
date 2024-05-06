@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WebViewApp</string>
+    <string name="app_name">Pereira</string>
     <string name="action_external_web">External Web Page</string>
     <string name="action_internal_web">Internal Web Page</string>
 </resources>
